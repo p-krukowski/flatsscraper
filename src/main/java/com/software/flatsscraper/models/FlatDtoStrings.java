@@ -1,32 +1,23 @@
 package com.software.flatsscraper.models;
 
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
-
-import java.time.LocalDate;
-
-@Table("flats")
-public class Flat {
-    @Id
-    private Long id;
+public class FlatDtoStrings {
 
     private String siteId;
     private String location;
-    private double price;
-    private int area;
-    private int rooms;
-    private LocalDate uploadDate;
+    private String price;
+    private String area;
+    private String rooms;
+    private String uploadDate;
     private String url;
     private String imageUrl;
 
     public static final class Builder {
         private String siteId;
         private String location;
-        private double price;
-        private int area;
-        private int rooms;
-        private LocalDate uploadDate;
+        private String price;
+        private String area;
+        private String rooms;
+        private String uploadDate;
         private String url;
         private String imageUrl;
 
@@ -40,22 +31,22 @@ public class Flat {
             return this;
         }
 
-        public Builder price(double price) {
+        public Builder price(String price) {
             this.price = price;
             return this;
         }
 
-        public Builder area(int area) {
+        public Builder area(String area) {
             this.area = area;
             return this;
         }
 
-        public Builder rooms(int rooms) {
+        public Builder rooms(String rooms) {
             this.rooms = rooms;
             return this;
         }
 
-        public Builder uploadDate(LocalDate uploadDate) {
+        public Builder uploadDate(String uploadDate) {
             this.uploadDate = uploadDate;
             return this;
         }
@@ -70,26 +61,18 @@ public class Flat {
             return this;
         }
 
-        public Flat build() {
-            Flat flat = new Flat();
-            flat.siteId = this.siteId;
-            flat.location = this.location;
-            flat.price = this.price;
-            flat.area = this.area;
-            flat.rooms = this.rooms;
-            flat.uploadDate = this.uploadDate;
-            flat.url = this.url;
-            flat.imageUrl = this.imageUrl;
-            return flat;
+        public FlatDtoStrings build() {
+            FlatDtoStrings flatDto = new FlatDtoStrings();
+            flatDto.siteId = this.siteId;
+            flatDto.location = this.location;
+            flatDto.price = this.price;
+            flatDto.area = this.area;
+            flatDto.rooms = this.rooms;
+            flatDto.uploadDate = this.uploadDate;
+            flatDto.url = this.url;
+            flatDto.imageUrl = this.imageUrl;
+            return flatDto;
         }
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getSiteId() {
@@ -108,35 +91,35 @@ public class Flat {
         this.location = location;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getArea() {
+    public String getArea() {
         return area;
     }
 
-    public void setArea(int area) {
+    public void setArea(String area) {
         this.area = area;
     }
 
-    public int getRooms() {
+    public String getRooms() {
         return rooms;
     }
 
-    public void setRooms(int rooms) {
+    public void setRooms(String rooms) {
         this.rooms = rooms;
     }
 
-    public LocalDate getUploadDate() {
+    public String getUploadDate() {
         return uploadDate;
     }
 
-    public void setUploadDate(LocalDate uploadDate) {
+    public void setUploadDate(String uploadDate) {
         this.uploadDate = uploadDate;
     }
 
@@ -158,14 +141,13 @@ public class Flat {
 
     @Override
     public String toString() {
-        return "Flat{" +
-                "id=" + id +
-                ", siteId=" + siteId +
+        return "FlatDtoStrings{" +
+                "siteId='" + siteId + '\'' +
                 ", location='" + location + '\'' +
-                ", price=" + price +
-                ", area=" + area +
-                ", rooms=" + rooms +
-                ", uploadDate=" + uploadDate +
+                ", price='" + price + '\'' +
+                ", area='" + area + '\'' +
+                ", rooms='" + rooms + '\'' +
+                ", uploadDate='" + uploadDate + '\'' +
                 ", url='" + url + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 '}';

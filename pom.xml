@@ -11,8 +11,9 @@
     <groupId>com.software</groupId>
     <artifactId>flatsscraper</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>flatsscraper</name>
-    <description>Demo project for Spring Boot</description>
+
+    <name>Flats Scraper</name>
+    <description>App for web scraping flats info from morizon</description>
 
     <properties>
         <java.version>11</java.version>
@@ -29,13 +30,14 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jdbc</artifactId>
             <version>2.0.3.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
@@ -60,16 +62,18 @@
             <artifactId>jsoup</artifactId>
             <version>1.13.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
 
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <name>Spring Maven MILESTONE Repository</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>

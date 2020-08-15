@@ -1,22 +1,19 @@
 package com.software.flatsscraper.configs;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration;
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJdbcRepositories
+@EnableJdbcRepositories("com.software.flatsscraper.repositories")
+public
 class ApplicationConfig extends AbstractJdbcConfiguration {
 
-    @Bean
-    public DataSource dataSource() {
+    private DataSource dataSource;
 
-        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        return builder.setType(EmbeddedDatabaseType.HSQL).build();
+    public ApplicationConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 }
